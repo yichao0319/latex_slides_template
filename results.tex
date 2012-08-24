@@ -1,0 +1,81 @@
+\documentclass[pdf,final,colorBG,slideColor,total]{prosper}
+\usepackage{epsfig}
+\usepackage{amsbsy,amsmath}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{amsbsy}
+\usepackage{epsfig}
+\usepackage{natbib}
+\usepackage{color}
+
+\setlength{\unitlength}{1cm}
+
+\newcommand{\bi}{\begin{itemize}} 
+\newcommand{\ei}{\end{itemize}} 
+\newcommand{\bis}{\begin{itemstep}} 
+\newcommand{\eis}{\end{itemstep}} 
+\newcommand{\putat}[3]{\begin{picture}(0,0)(0,0)\put(#1,#2){#3}\end{picture}}
+
+\title{Measurement Analysis of Femtocells}
+\subtitle{ }
+\author{ Aug. 24, 2012 }
+% \institution{Department of Mathematics \\ University of Manchester}
+% \email{. \\ M.Heil@maths.man.ac.uk \ \ \  \& \ \ \ ahazel@maths.man.ac.uk \\ 
+% http://www.maths.man.ac.uk/$\tilde{\ }$mheil}
+\slideCaption{ }
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}[R]{Record the Symbols}
+    \bi
+        \item records Downlink symbols using USRP
+        \bi
+            \item psk / qpsk / qam
+            \item bitrate 1e6 / 2e6
+            \item different block
+            \bi
+                \item before automatic gain control
+                \item after automatic gain control
+                \item after frequency correction
+                \item after RRC data filter
+            \ei
+        \ei
+    \ei
+\end{slide}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\overlays{3}{%
+    
+    \begin{slide}[R]{1e6, psk, before AGC}
+    \vspace{-1cm}
+    \fromSlide*{2}{
+      \putat{0}{-0.5}{test}
+    }
+    \onlySlide*{1}{%
+        % \begin{figure}
+        %     \includegraphics[scale=1]{DL_nodata.dat.ps}
+        % \end{figure}
+        \putat{0}{-0.5}{magnitude over time}
+        \putat{-2}{-9}{\includegraphics[scale=1.1]{DL_nodata_1e6_psk.signal.dat.ps}}
+    }
+    \onlySlide*{2}{%
+        \putat{0}{-0.5}{zoomin}
+        \putat{-2}{-9}{\includegraphics[scale=1.1]{DL_nodata_1e6_psk.signal.dat.2.ps}}
+    }
+    \onlySlide*{3}{%
+        \putat{0}{-0.2}{plot the complex number}
+        \putat{-1}{-9}{\includegraphics[scale=1]{DL_nodata_1e6_psk.signal.dat.plane.ps}}
+    }
+    
+    \end{slide}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
